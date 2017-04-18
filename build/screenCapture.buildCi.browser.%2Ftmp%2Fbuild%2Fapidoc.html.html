@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/Raynos/duplexer"
-
-    >duplexer (v0.1.1)</a>
+    <a href="https://github.com/Raynos/duplexer">duplexer (v0.1.1)</a>
 </h1>
 <h4>Creates a duplex stream</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.duplexer">module duplexer</a><ol>
 
@@ -95,14 +88,14 @@
 
     forEach(readEvents, proxyStream)
 
-    reader.on(&#x22;end&#x22;, handleEnd)
+    reader.on("end", handleEnd)
 
-    writer.on(&#x22;drain&#x22;, function() {
-      stream.emit(&#x22;drain&#x22;)
+    writer.on("drain", function() {
+      stream.emit("drain")
     })
 
-    writer.on(&#x22;error&#x22;, reemit)
-    reader.on(&#x22;error&#x22;, reemit)
+    writer.on("error", reemit)
+    reader.on("error", reemit)
 
     stream.writable = writer.writable
     stream.readable = reader.readable
@@ -146,12 +139,12 @@
         }
         ended = true
         var args = slice.call(arguments)
-        args.unshift(&#x22;end&#x22;)
+        args.unshift("end")
         stream.emit.apply(stream, args)
     }
 
     function reemit(err) {
-        stream.emit(&#x22;error&#x22;, err)
+        stream.emit("error", err)
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -166,3 +159,4 @@
     ]
 </div>
 </div>
+</body></html>

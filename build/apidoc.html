@@ -61,12 +61,102 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.duplexer">module duplexer</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.duplexer.duplexer">
+            function <span class="apidocSignatureSpan"></span>duplexer
+            <span class="apidocSignatureSpan">(writer, reader)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.duplexer" id="apidoc.module.duplexer">module duplexer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.duplexer.duplexer" id="apidoc.element.duplexer.duplexer">
+        function <span class="apidocSignatureSpan"></span>duplexer
+        <span class="apidocSignatureSpan">(writer, reader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function duplex(writer, reader) {
+    var stream = new Stream()
+    var ended = false
+
+    forEach(writeMethods, proxyWriter)
+
+    forEach(readMethods, proxyReader)
+
+    forEach(readEvents, proxyStream)
+
+    reader.on(&#x22;end&#x22;, handleEnd)
+
+    writer.on(&#x22;drain&#x22;, function() {
+      stream.emit(&#x22;drain&#x22;)
+    })
+
+    writer.on(&#x22;error&#x22;, reemit)
+    reader.on(&#x22;error&#x22;, reemit)
+
+    stream.writable = writer.writable
+    stream.readable = reader.readable
+
+    return stream
+
+    function proxyWriter(methodName) {
+        stream[methodName] = method
+
+        function method() {
+            return writer[methodName].apply(writer, arguments)
+        }
+    }
+
+    function proxyReader(methodName) {
+        stream[methodName] = method
+
+        function method() {
+            stream.emit(methodName)
+            var func = reader[methodName]
+            if (func) {
+                return func.apply(reader, arguments)
+            }
+            reader.emit(methodName)
+        }
+    }
+
+    function proxyStream(methodName) {
+        reader.on(methodName, reemit)
+
+        function reemit() {
+            var args = slice.call(arguments)
+            args.unshift(methodName)
+            stream.emit.apply(stream, args)
+        }
+    }
+
+    function handleEnd() {
+        if (ended) {
+            return
+        }
+        ended = true
+        var args = slice.call(arguments)
+        args.unshift(&#x22;end&#x22;)
+        stream.emit.apply(stream, args)
+    }
+
+    function reemit(err) {
+        stream.emit(&#x22;error&#x22;, err)
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
