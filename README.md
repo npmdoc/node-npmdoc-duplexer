@@ -1,9 +1,14 @@
-# api documentation for  [duplexer (v0.1.1)](https://github.com/Raynos/duplexer)  [![npm package](https://img.shields.io/npm/v/npmdoc-duplexer.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-duplexer) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-duplexer.svg)](https://travis-ci.org/npmdoc/node-npmdoc-duplexer)
+# npmdoc-duplexer
+
+#### api documentation for  [duplexer (v0.1.1)](https://github.com/Raynos/duplexer)  [![npm package](https://img.shields.io/npm/v/npmdoc-duplexer.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-duplexer) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-duplexer.svg)](https://travis-ci.org/npmdoc/node-npmdoc-duplexer)
+
 #### Creates a duplex stream
 
-[![NPM](https://nodei.co/npm/duplexer.png?downloads=true)](https://www.npmjs.com/package/duplexer)
+[![NPM](https://nodei.co/npm/duplexer.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/duplexer)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-duplexer/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-duplexer_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-duplexer/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-duplexer/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-duplexer/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-duplexer/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-duplexer/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-duplexer/build/screenCapture.npmPackageListing.svg)
 
@@ -17,12 +22,10 @@
 
 {
     "author": {
-        "name": "Raynos",
-        "email": "raynos2@gmail.com"
+        "name": "Raynos"
     },
     "bugs": {
-        "url": "https://github.com/Raynos/duplexer/issues",
-        "email": "raynos2@gmail.com"
+        "url": "https://github.com/Raynos/duplexer/issues"
     },
     "contributors": [
         {
@@ -51,17 +54,14 @@
     "main": "index",
     "maintainers": [
         {
-            "name": "raynos",
-            "email": "raynos2@gmail.com"
+            "name": "raynos"
         },
         {
-            "name": "dominictarr",
-            "email": "dominic.tarr@gmail.com"
+            "name": "dominictarr"
         }
     ],
     "name": "duplexer",
     "optionalDependencies": {},
-    "readme": "# duplexer\n\n[![build status][1]][2] [![dependency status][3]][4]\n\n[![browser support][5]][6]\n\nCreates a duplex stream\n\nTaken from [event-stream][7]\n\n## duplex (writeStream, readStream)\n\nTakes a writable stream and a readable stream and makes them appear as a readable writable stream.\n\nIt is assumed that the two streams are connected to each other in some way.\n\n## Example\n\n'''js\nvar grep = cp.exec('grep Stream')\n\nduplex(grep.stdin, grep.stdout)\n'''\n\n## Installation\n\n'npm install duplexer'\n\n## Tests\n\n'npm test'\n\n## Contributors\n\n - Dominictarr\n - Raynos\n - samccone\n\n## MIT Licenced\n\n  [1]: https://secure.travis-ci.org/Raynos/duplexer.png\n  [2]: https://travis-ci.org/Raynos/duplexer\n  [3]: https://david-dm.org/Raynos/duplexer.png\n  [4]: https://david-dm.org/Raynos/duplexer\n  [5]: https://ci.testling.com/Raynos/duplexer.png\n  [6]: https://ci.testling.com/Raynos/duplexer\n  [7]: https://github.com/dominictarr/event-stream#duplex-writestream-readstream\n",
     "readmeFilename": "README.md",
     "repository": {
         "type": "git",
@@ -88,16 +88,6 @@
     "version": "0.1.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module duplexer](#apidoc.module.duplexer)
-
-
-
-# <a name="apidoc.module.duplexer"></a>[module duplexer](#apidoc.module.duplexer)
 
 
 
